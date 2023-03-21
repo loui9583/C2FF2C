@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F5F5F5;
+        }
+
+        form {
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            box-shadow: 0px 2px 2px #CCCCCC;
+            padding: 20px;
+            margin-bottom: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            border: 1px solid #CCCCCC;
+            border-radius: 3px;
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border: none;
+            color: #FFFFFF;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3E8E41;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<form action="/C2F" method="post">
+  <label>Celsius to fahrenheit</label><br>
+  <input name="startDegree" placeholder="degree" type="number">
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+<form action="/F2C" method="post">
+    <label>Fahrenheit to celsius</label><br>
+    <input name="startDegree" placeholder="degree" type="number">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+<h1 th:text="${convertedDegree}"></h1>
+
+
+</body>
+</html>
