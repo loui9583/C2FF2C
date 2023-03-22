@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url("/background.jpg");
+        }
+
+        label {
+            font-size: 25px;
+        }
+
+        span {
+            font-size: 30px;
+            font-weight: bold;
+            font-family: "Cambria Math";
+        }
+
+        h1 {
+            font-family: "Cambria Math";
+        }
+
+        div {
+            border: 3px solid lightblue;
+            padding: 10px;
+            display: inline-block;
+            width: 50%;
+            margin: 0 auto;
+            background-color: rgba(240, 248, 255, 0.9);
+        }
+
+        #title {
+            background-color: rgba(240, 247, 255, 0.88);
+        }
+
+
+    </style>
+</head>
+
+<body>
+<h1 id="title">Fahrenheit-Celsius Converter</h1>
+<br>
+<div id="forms">
+    <form action="/C2F" method="post">
+        <label>Celsius To Fahrenheit</label><br>
+        <input type="hidden" name="startDegree" value=0>
+        <input name="startDegree" placeholder="Enter Celsius Degree" type="number">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <br>
+
+    <form action="/F2C" method="post">
+        <label>Fahrenheit To Celsius</label><br>
+
+        <input type="hidden" name="startDegree" value=0>
+        <input name="startDegree" placeholder="Enter Fahrenheit Degree" type="number">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<br><br><br>
+
+<div id="result">
+    <span th:text="${startDegree}"></span> <span th:text="${inputType}"></span>
+    <span>is </span>
+    <span th:text="${convertedDegree}"></span> <span th:text="${outputType}"></span>
+</div>
+
+</body>
+</html>
