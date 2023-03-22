@@ -5,81 +5,71 @@
     <title>Title</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #F5F5F5;
-        }
-
-        form {
-            background-color: #FFFFFF;
-            border-radius: 5px;
-            box-shadow: 0px 2px 2px #CCCCCC;
-            padding: 20px;
-            margin-bottom: 20px;
-            max-width: 400px;
-            width: 100%;
+            text-align: center;
+            background-image: url("/background.jpg");
         }
 
         label {
-            display: block;
-            font-size: 18px;
+            font-size: 25px;
+        }
+
+        span {
+            font-size: 30px;
             font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        input[type="number"] {
-            border: 1px solid #CCCCCC;
-            border-radius: 3px;
-            padding: 10px;
-            width: 100%;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        input[type="submit"] {
-            background-color: #4CAF50;
-            border: none;
-            color: #FFFFFF;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            padding: 10px;
-            width: 100%;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #3E8E41;
+            font-family: "Cambria Math";
         }
 
         h1 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-            text-align: center;
+            font-family: "Cambria Math";
         }
-    </style>
 
+        div {
+            border: 3px solid lightblue;
+            padding: 10px;
+            display: inline-block;
+            width: 50%;
+            margin: 0 auto;
+            background-color: rgba(240, 248, 255, 0.9);
+        }
+
+        #title {
+            background-color: rgba(240, 247, 255, 0.88);
+        }
+
+
+    </style>
 </head>
 
 <body>
+<h1 id="title">Fahrenheit-Celsius Converter</h1>
+<br>
+<div id="forms">
+    <form action="/C2F" method="post">
+        <label>Celsius To Fahrenheit</label><br>
+        <input type="hidden" name="startDegree" value=0>
+        <input name="startDegree" placeholder="Enter Celsius Degree" type="number">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
 
-<form action="/C2F" method="post">
-  <label>Celsius to fahrenheit</label><br>
-  <input name="startDegree" placeholder="degree" type="number">
-  <br>
-  <input type="submit" value="Submit">
-</form>
-
-
-
-<form action="/F2C" method="post">
-    <label>Fahrenheit to celsius</label><br>
-    <input name="startDegree" placeholder="degree" type="number">
     <br>
-    <input type="submit" value="Submit">
-</form>
 
-<h1 th:text="${convertedDegree}"></h1>
+    <form action="/F2C" method="post">
+        <label>Fahrenheit To Celsius</label><br>
 
+        <input type="hidden" name="startDegree" value=0>
+        <input name="startDegree" placeholder="Enter Fahrenheit Degree" type="number">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<br><br><br>
+
+<div id="result">
+    <span th:text="${startDegree}"></span> <span th:text="${inputType}"></span>
+    <span>is </span>
+    <span th:text="${convertedDegree}"></span> <span th:text="${outputType}"></span>
+</div>
 
 </body>
 </html>

@@ -17,13 +17,18 @@ public class MainController {
 
         model.addAttribute("startDegree",degree.getStartDegree());
         model.addAttribute("convertedDegree",degree.getC2F());
-
+        model.addAttribute("inputType","Celsius");
+        model.addAttribute("outputType","Fahrenheit");
         return "index";
+
     }
 
     @PostMapping("/F2C")
     String fahrenheitToCelsius(@ModelAttribute Degree degree, Model model){
 
+
+        model.addAttribute("inputType","Fahrenheit");
+        model.addAttribute("outputType","Celsius");
         model.addAttribute("startDegree",degree.getStartDegree());
         model.addAttribute("convertedDegree",degree.getF2C());
 
